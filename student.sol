@@ -42,12 +42,16 @@ contract StudentData
         return student.length;
     }
 
-    //Fallback Function
-    //triggered when the contract receives Ether without any function call. 
-    //It automatically adds a student with fixed values:
+   
+    //receive` function to handle plain Ether transfers without data
     receive() external payable
     {
         student.push(Student(7,"MSD","IT"));
     }
+    
+    //`fallback` function to handle calls with data that don't match any function signature
+    fallback() external payable {
+        student.push(Student(0, "Fallback Student", "Unknown"));
+     }
 
 }
