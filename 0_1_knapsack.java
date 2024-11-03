@@ -15,9 +15,9 @@ class KnapSack {
     }
 
     public static void main(String[] args) {
-        int val[] = {100, 60, 120};
-        int wt[] = {10, 20, 30};
-        int W = 50;
+        int val[] = {2,3,4,1};
+        int wt[] = {3,4,5,6};
+        int W = 8;
         int n = val.length;
         System.out.println("Max profit (DP): " + knapDP(W, wt, val, n));
     }
